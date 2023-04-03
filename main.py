@@ -168,6 +168,7 @@ if __name__ == "__main__":
     g_graph(x)
     h_graph(x)
 
+    x = np.linspace(-2, 2, num=100)
     real_graph(x, a, a_zero)
 
     complex_graph(c, -5, 5)

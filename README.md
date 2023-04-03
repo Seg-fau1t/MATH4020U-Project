@@ -30,3 +30,10 @@ Some images from the python code.
 ![Alt text](img/Figure_5-1.png "Figure 5-1")
 ![Alt text](img/Figure_5-2.png "Figure 5-2")
 
+![Alt text](img/Figure_6-1.png "Figure 6-1")
+![Alt text](img/Figure_6-2.png "Figure 6-2")
+![Alt text](img/Figure_6-3.png "Figure 6-3")
+
+![Alt text](img/Figure_7-1.png "Figure 7-1")
+![Alt text](img/Figure_7-2.png "Figure 7-2")
+![Alt text](img/Figure_7-3.png "Figure 7-3")
