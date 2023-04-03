@@ -45,6 +45,27 @@ def cd(z):
     """Derivative of the complex function c(z)."""
     return 3 * np.square(z)
 
+# custom functions
+# ------------------------------------------------------------------------------
+
+def a(x):
+    """Real function a(x)."""
+    return np.exp(x) * np.cos(np.square(x))
+
+def ad(x):
+    """Derivative of a(x)."""
+    return np.exp(x) * (np.cos(np.square(x)) - (2 * x * np.sin(np.square(x))))
+
+def b(z):
+    """Complex function b(z)."""
+    return np.sin(z)
+
+def bd(z):
+    """Derivative of the complex function b(z)."""
+    return np.cos(z)
+
+
+
 # ------------------------------------------------------------------------------
 
 
@@ -66,6 +87,18 @@ def h_zero(x):
 def c_zero(z):
     """Newton method applied to c(x)."""
     return newt(c, z, fprime=cd)
+
+# custom functions
+# ------------------------------------------------------------------------------
+
+def a_zero(x):
+    """Newton method applied to a(x)."""
+    return newt(a, x, fprime=ad)
+
+
+def b_zero(z):
+    """Newton method applied to b(x)."""
+    return newt(b, z, fprime=bd)
 
 # ------------------------------------------------------------------------------
 
@@ -102,7 +135,7 @@ def real_graph(x, f, f_zero):
     plt.show()
 
 
-def complex_graph(f, start=-1, stop=1, num=1000):
+def complex_graph(f, start=-1, stop=1, num=500):
     """Plot a complex function."""
     plt = cplot.plot(f, (start, stop, num), (start, stop, num))
     plt.show()
@@ -125,16 +158,20 @@ def h_graph(x):
 
 def c_graph(x, y):
     """Quick way to plot c(x) newton iterations."""
-    complex_graph(c_zero, x, y)
+    complex_graph(c_zero, x, y, num=1000)
 
 
 if __name__ == "__main__":
-
     x = np.linspace(-5, 5, num=1000)
 
     f_graph(x)
     g_graph(x)
     h_graph(x)
 
+    real_graph(x, a, a_zero)
+
     complex_graph(c, -5, 5)
     c_graph(-5, 5)
+
+    complex_graph(b, -5, 5)
+    complex_graph(b_zero, -5, 5)
